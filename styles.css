@@ -9,8 +9,7 @@ body {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    font-variation-settings:
-      "slnt" 0;
+    font-variation-settings: "slnt" 0;
 }
 
 header {
@@ -36,16 +35,18 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
+    margin-left: auto;
 }
 
 .nav-links li {
-    margin-left: 70px;
+    margin-left: 20px;
 }
 
 .nav-links a {
     color: #18191F;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .burger {
@@ -58,7 +59,6 @@ nav {
     height: 3px;
     background: #18191F;
     margin: 5px;
-    color: #18191F;
 }
 
 .hero {
@@ -79,7 +79,7 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 3.8rem;
+    font-size: 4rem;
     margin-bottom: 20px;
     color: #4D4D4D;
 }
@@ -154,7 +154,6 @@ nav {
     display: flex;
     justify-content: space-around;
     padding: 50px 20px;
-
 }
 
 .card {
@@ -164,14 +163,13 @@ nav {
     text-align: center;
     width: 30%;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle box shadow */
-    transition: transform 0.3s ease-in-out; /* Adding transition for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift the card slightly on hover */
+    transform: translateY(-5px);
 }
-
 
 .card i {
     font-size: 2rem;
@@ -186,7 +184,7 @@ nav {
 
 .card p {
     font-size: 1rem;
-    color: #717171
+    color: #717171;
 }
 
 .container {
@@ -203,7 +201,7 @@ nav {
 .contact-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #4D4D4D
+    color: #4D4D4D;
 }
 
 .contact-form {
@@ -237,7 +235,6 @@ nav {
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    margin-right: 500px;
 }
 
 .form-group button:hover {
@@ -273,23 +270,88 @@ nav {
     background-color: #388E3C;
 }
 
-footer {
-    background: #263238;
+a {
     color: #fff;
-    text-align: center;
-    padding: 10px 20px;
+    text-decoration: none;
 }
 
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    margin-right: 20px;
+}
+
+.footer-logo img {
+    max-width: 100px;
+}
+
+.contact-info {
+    text-align: left;
+    flex: 1;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin: 5px;
+}
+
+.contact-info p i {
+    margin-right: 5px;
+}
+
+.map {
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
+.map iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+.copyright {
+    margin-top: 20px;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #F5F7FA;
+        position: absolute;
+        top: 60px;
+        left: 0;
     }
-    
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
     .burger {
         display: block;
     }
-    
+
+    .burger.active + .nav-links {
+        display: flex;
+    }
+
     .hero {
         flex-direction: column;
         padding-top: 60px;
@@ -301,6 +363,10 @@ footer {
         text-align: center;
         padding: 20px 20px 0 20px;
         align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
 
     .hero-text button {
@@ -335,7 +401,7 @@ footer {
     .cards {
         flex-direction: column;
     }
-    
+
     .card {
         width: 100%;
         margin-bottom: 20px;
@@ -345,10 +411,23 @@ footer {
     .form-group textarea {
         font-size: 0.9rem;
     }
-}
 
-a {
-    color: #fff;
-  }
-  
-  
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 0 0 20px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .map {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}

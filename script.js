@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
-    const menu = document.querySelector('nav ul.menu');
-  
-    burger.addEventListener('click', function() {
-      console.log('Burger menu clicked!');
-      menu.classList.toggle('active');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('active');
     });
-  });
-  
+});
+
   
