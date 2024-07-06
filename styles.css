@@ -20,6 +20,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
+    
 }
 
 nav {
@@ -29,7 +30,7 @@ nav {
 }
 
 .logo {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .nav-links {
@@ -39,7 +40,7 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .nav-links a {
@@ -329,6 +330,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    header {
+        padding: 10px 10px; /* Reduce padding to fit within mobile screen */
+    }
+    
     .nav-links {
         display: none;
         flex-direction: column;
