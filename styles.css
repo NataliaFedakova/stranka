@@ -4,16 +4,23 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
+    background: #efe2fe; 
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
     font-variation-settings: "slnt" 0;
+  
 }
 
 header {
-    background: #F5F7FA;
+    background: #efe2fe; /* Gradient background from top (#F5F7FA) to bottom (#D1D9E6) */
     color: #18191F;
     padding: 10px 20px;
     position: fixed;
@@ -44,7 +51,7 @@ nav {
 }
 
 .nav-links a {
-    color: #18191F;
+    color: #000236;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -58,17 +65,26 @@ nav {
 .burger div {
     width: 25px;
     height: 3px;
-    background: #18191F;
+    background: #000236;
     margin: 5px;
 }
 
 .hero {
-    background: #F5F7FA;
+    background: #efe2fe; 
     display: flex;
     height: 100vh;
     padding-top: 60px;
     align-items: center;
+    justify-content: center; /* Center content horizontally */
+    text-align: center; /* Center content text */
+    color: #18191F; /* Adjust text color to ensure readability */
 }
+
+.hero-content {
+    position: relative; /* Ensure content is positioned correctly */
+    z-index: 1; /* Ensure content is above the background */
+}
+
 
 .hero-text {
     flex: 1;
@@ -82,20 +98,20 @@ nav {
 .hero-text h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    color: #4D4D4D;
+    color: #000236;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #717171;
+    color: #8c8c8e;
 }
 
 .hero-text button {
     padding: 10px 20px;
     font-size: 1rem;
     background: #4CAF4F;
-    color: #fff;
+    color: #FDFDFD;
     border: none;
     cursor: pointer;
     border-radius: 4px;
@@ -142,12 +158,12 @@ nav {
 .content-text h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #4D4D4D;
+    color: #000236;
 }
 
 .content-text p {
     font-size: 1rem;
-    color: #717171;
+    color: #8c8c8e;
     margin-right: 60px;
 }
 
@@ -180,63 +196,41 @@ nav {
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #4D4D4D;
+    color: #000236;
 }
 
 .card p {
     font-size: 1rem;
-    color: #717171;
+    color: #8c8c8e;
 }
 
-.skills.section {
-    padding: 50px 0;
+.heading{
+    color: #18191F;
+    font-size: 2rem;;
 }
 
 .skills-box {
-    position: relative;
-}
-
-.box-heading {
     text-align: center;
-    margin-bottom: 40px;
+    padding: 20px;
 }
 
-.box-heading .heading {
-    font-size: 2rem;
-    margin: 10px 0;
-    color: #4D4D4D;
-}
-
-.box-desc {
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.box-desc .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4CAF4F;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.box-desc .btn:hover {
-    background-color: #388E3C;
+.card-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .skills-wrap {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .skill {
+    width: 150px;
     text-align: center;
     margin: 20px;
 }
@@ -245,26 +239,40 @@ nav {
     position: relative;
     width: 150px;
     height: 150px;
-    margin: auto;
+    margin: 0 auto 20px;
 }
 
-svg {
+.sk-progress svg {
+    position: relative;
+    width: 100%;
+    height: 100%;
     transform: rotate(-90deg);
 }
 
-.bg {
+.sk-progress circle {
+    width: 100%;
+    height: 100%;
     fill: none;
-    stroke: #e6e6e6; /* Background circle color */
-    stroke-width: 10;
+    stroke-width: 8;
+    cx: 75;
+    cy: 75;
+    r: 68;
 }
 
-.progress {
-    fill: none;
-    stroke: #8c71d1; /* Progress circle color */
-    stroke-width: 10;
-    stroke-dasharray: 427; /* Circumference of the circle (2 * π * radius) */
-    stroke-dashoffset: 427; /* Start with the stroke-dashoffset equal to circumference */
+.sk-progress circle.bg {
+    stroke: #e0e0e0;
+}
+
+.sk-progress circle.progress {
+    stroke: #b261cb;
+    stroke-dasharray: 427;
+    stroke-dashoffset: 427;
     transition: stroke-dashoffset 1s linear;
+}
+
+.sk-title {
+    font-size: 1.2rem;
+    color: #333;
 }
 
 .counter {
@@ -272,16 +280,9 @@ svg {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
 }
-
-.sk-title {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-}
-
 
 .container {
     max-width: 1100px;
@@ -297,7 +298,7 @@ svg {
 .contact-section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #4D4D4D;
+    color: #000236;
 }
 
 .contact-form {
@@ -347,7 +348,7 @@ svg {
 
 .portfolio-section h2 {
     font-size: 2.5rem;
-    color: #263238;
+    color: #000236;
     margin-bottom: 20px;
 }
 
@@ -437,7 +438,7 @@ footer {
         flex-direction: column;
         width: 100%;
         text-align: center;
-        background-color: #F5F7FA;
+        background-color: #efe2fe;
         position: absolute;
         top: 60px;
         left: 0;
