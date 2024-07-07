@@ -254,9 +254,6 @@ nav {
     height: 100%;
     fill: none;
     stroke-width: 8;
-    cx: 75;
-    cy: 75;
-    r: 68;
 }
 
 .sk-progress circle.bg {
@@ -264,7 +261,7 @@ nav {
 }
 
 .sk-progress circle.progress {
-    stroke: #b261cb;
+    stroke: #4CAF4F;
     stroke-dasharray: 427;
     stroke-dashoffset: 427;
     transition: stroke-dashoffset 1s linear;
